@@ -90,34 +90,13 @@ class ViewController: UIViewController {
     }
     //按下密碼顯示圖片
     func showPasswordImage(currentCount:Int){
-        switch currentCount{
-        case 0:
-            for i in 0...3{
+        for i in 0..<currentCount{
+            passwordImageArray[i].image = UIImage(named: "passwordImage\(i)")
+        }
+        if currentCount < 4{
+            for i in currentCount...3{
                 passwordImageArray[i].image = UIImage(named: "passwordBackImage\(i)")
             }
-        case 1:
-            passwordImage0.image = UIImage(named: "passwordImage0")
-            for i in 1...3{
-                passwordImageArray[i].image = UIImage(named: "passwordBackImage\(i)")
-            }
-        case 2:
-            for i in 0...1{
-                passwordImageArray[i].image = UIImage(named: "passwordImage\(i)")
-            }
-            for i in 2...3{
-                passwordImageArray[i].image = UIImage(named: "passwordBackImage\(i)")
-            }
-        case 3:
-            for i in 0...2{
-                passwordImageArray[i].image = UIImage(named: "passwordImage\(i)")
-            }
-            passwordImage3.image = UIImage(named: "passwordBackImage3")
-        case 4:
-            for i in 0...3{
-                passwordImageArray[i].image = UIImage(named: "passwordImage\(i)")
-            }
-        default:
-            return
         }
     }
     //狀態圖片
